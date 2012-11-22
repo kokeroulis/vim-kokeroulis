@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/kokeroulis/kdesrc'
+let g:netrw_dirhist_2='/home/kokeroulis/kdesrc/kde'
+let g:netrw_dirhist_3='/home/kokeroulis/kdesrc/kde/kdelibs'
+let g:netrw_dirhist_4='/home/kokeroulis/kdesrc/kde/kdelibs/kparts'
+let g:netrw_dirhist_5='/home/kokeroulis/kdesrc/playgound/base/plasmate/plasmate'
+let g:netrw_dirhist_6='/home/kokeroulis/kdesrc/playgound/base/plasmate/plasmate/editors'
+let g:netrw_dirhist_7='/home/kokeroulis/kdesrc/playgound/base/plasmate/plasmate/editors/text'
+let g:netrw_dirhist_8='/home/kokeroulis/kdesrc/playgound/base/plasmate/plasmate/publisher'
