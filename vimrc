@@ -8,13 +8,12 @@ map <F8> :tabp<cr>
 map s :w<cr>
 map z : :u<cr>
 map <c-z> : :<c-r><cr>
-
+imap <tab> <c-t>
 ":set noautochdir
 map q :q<cr>
 inoremap { {<cr><cr>}<UP>
 inoremap ( ()<Left>
-"inoremap <Tab> :call MakeTabMoveTheWholeWord() <cr>
-
+inoremap " ""<Left>
 
 "show the line numbers
 set number
@@ -127,14 +126,3 @@ function! GitDiff()
         :!git diff
 endfunction
 
-function! MakeTabMoveTheWholeWord()
-    let currentWord = expand("<cWORD>")
-    if (currentWord == "*/\s*" ) 
-        echo "true"
-    elseif (currentWord == " ")
-        echo "true"
-    else
-        echo "false"
-    endif
-
-endfunction
