@@ -7,6 +7,8 @@ map <F7> :tabn<cr>
 map <F8> :tabp<cr>
 map s :w<cr>
 map z : :u<cr>
+map <c-z> : :<c-r><cr>
+
 ":set noautochdir
 map q :q<cr>
 inoremap { {<cr><cr>}<UP>
