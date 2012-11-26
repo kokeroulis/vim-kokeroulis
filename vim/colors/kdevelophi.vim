@@ -6,3 +6,4 @@ hi Comment ctermfg=DarkBlue
 hi cppType ctermfg=DarkGreen
 hi Constant ctermfg=Red
 hi StatusLine ctermfg=DarkGreen
+hi PmenuSel ctermfg=DarkGreen
