@@ -14,6 +14,7 @@ map q :q<cr>
 inoremap { {<cr><cr>}<UP>
 inoremap ( ()<Left>
 inoremap " ""<Left>
+inoremap ' ''<Left>
 
 "Make Vim completion popup menu work just like in an IDE
 set completeopt=longest,menuone
