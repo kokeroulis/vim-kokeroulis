@@ -3,8 +3,8 @@ colorscheme kdevelophi
 map <c-o> :cd %:p:h <cr>:tabe %:p:h<cr>
 map <F5> :call BuildGitRepo()<cr>
 map <F6> :call GitDiff()<cr>
-map <F7> :tabn<cr>
-map <F8> :tabp<cr>
+map <F8> :tabn<cr>
+map <F7> :tabp<cr>
 map s :w<cr>
 map z : :u<cr>
 map <c-z> : :<c-r><cr>
