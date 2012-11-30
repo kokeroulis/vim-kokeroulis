@@ -16,6 +16,9 @@ inoremap ( ()<Left>
 inoremap " ""<Left>
 inoremap ' ''<Left>
 
+"make mouse to work just like in an IDE
+set mouse=a
+
 "Make Vim completion popup menu work just like in an IDE
 set completeopt=longest,menuone
 
@@ -60,6 +63,7 @@ set magic
 
 " Show matching brackets when text indicator is over them
 set showmatch
+
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
