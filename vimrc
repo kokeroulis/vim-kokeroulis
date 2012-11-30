@@ -115,23 +115,25 @@ set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 
 " Delete trailing whitespace on save
 func! DeleteTrailingWS()
-    exe "normal mz"
     %s/\s\+$//ge
-    exe "normal `z"
 endfunc
 
 autocmd BufWrite * :call DeleteTrailingWS()
 
 function! BuildGitRepo()
-	:cd %:p:h
-	let currentFileDir = expand("%:p:h")
-	let rootPathRepo = system('git rev-parse --show-toplevel')
-	let levelsBelowRootPath = len(split(currentFileDir,"/")) - len(split(rootPathRepo,"/"))
-	for i in range(1,levelsBelowRootPath)
-	  :cd ..
-	endfor
-	:cd build
-	:!make -j5 install
+    :cd %:p:h
+
+    let rootPathRepo = system('git rev-parse --show-toplevel')
+    let buildDirectory = substitute(rootPathRepo, "kdesrc", "kdesrc/build")
+
+    exe 'cd' rootPathRepo
+    if (isdirectory("build"))
+        cd build
+    else
+        exe 'cd' buildDirectory
+    endif
+
+    :!make -j5 install
 endfunction
 
 function! GitDiff()
