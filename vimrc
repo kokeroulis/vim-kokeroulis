@@ -7,14 +7,36 @@ map <F8> :tabn<cr>
 map <F7> :tabp<cr>
 map s :w<cr>
 map z : :u<cr>
-map <c-z> : :<c-r><cr>
+map <c-z> <c-r><cr>
 imap <tab> <c-t>
-":set noautochdir
 map q :q<cr>
 inoremap { {<cr><cr>}<UP>
 inoremap ( ()<Left>
 inoremap " ""<Left>
 inoremap ' ''<Left>
+
+"Add clipboard support.
+set clipboard=unnamed
+set clipboard=unnamedplus
+
+"Map the y and p to the "standard" shortcuts
+"If this doesn't work, look below
+
+map <c-c> "+yi
+map <c-v> "+pi
+
+"copy and paste while editing
+imap <c-c> <Esc><c-c>i
+imap <c-v> <Esc><c-v>i
+
+"The above code works only with vim versions
+"that are build with the xterm-clipboard.
+"
+"vim --version | grep xterm-clipboard
+"for more information
+"You can override that issue with gvim -v
+"or you could create the following alias
+"if [ -e /usr/bin/gvim ]; then alias vim='/usr/bin/gvim -v'; fi
 
 "make mouse to work just like in an IDE
 set mouse=a
@@ -144,3 +166,4 @@ function! GitDiff()
         :cd %:p:h
         :!git diff
 endfunction
+
