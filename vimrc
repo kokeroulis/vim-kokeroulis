@@ -146,6 +146,9 @@ endfunc
 
 autocmd BufWrite * :call DeleteTrailingWS()
 
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType python set completeopt=menuone
+
 function! BuildGitRepo()
     :cd %:p:h
 
