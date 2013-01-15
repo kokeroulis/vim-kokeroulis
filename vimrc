@@ -1,7 +1,7 @@
 syntax enable
 colorscheme kdevelophi
 map <c-o> :cd %:p:h <cr>:tabe %:p:h<cr>
-map <c-s-o> :cd %:p:h <cr>:vsplit<cr><c-w><c-w>:edit .<cr>
+map <s-o> :cd %:p:h <cr>:vsplit<cr><c-w><c-w>:edit .<cr>
 map <F5> :call BuildGitRepo()<cr>
 map <F6> :call GitDiff()<cr>
 map <F8> :tabn<cr>
