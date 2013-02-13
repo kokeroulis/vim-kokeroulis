@@ -6,7 +6,7 @@ map <F5> :call BuildGitRepo()<cr>
 map <F6> :call GitDiff()<cr>
 map <F8> :tabn<cr>
 map <F7> :tabp<cr>
-map s :w<cr>
+map s :w<cr> call ChangeStatusLineColor()<cr>
 map z : :u<cr>
 map <c-z> <c-r><cr>
 imap <tab> <c-t>
@@ -149,6 +149,8 @@ autocmd BufWrite * :call DeleteTrailingWS()
 
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType python set completeopt=menuone
+au CursorMovedI * call ChangeStatusLineColor()
+au CursorMoved * call ChangeStatusLineColor()
 filetype plugin indent on
 function! BuildGitRepo()
     :cd %:p:h
@@ -171,3 +173,10 @@ function! GitDiff()
         :!git diff
 endfunction
 
+function ChangeStatusLineColor()
+    if (&mod == 1)
+        hi StatusLine ctermfg=Red
+    else
+        hi StatusLine ctermfg=DarkGreen
+    endif
+endfunction
