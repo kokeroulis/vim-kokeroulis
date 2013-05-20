@@ -11,6 +11,8 @@ endif
 unlet! b:did_indent
 let b:did_indent = 1
 
+inoremap { {}<LEFT>
+
 ""setlocal autoindent et
 setlocal indentexpr=GetJadeIndent()
 setlocal indentkeys=o,O,*<Return>,},],0),!^F
